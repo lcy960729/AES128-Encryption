@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jnlp spec="1.0" xmlns:jfx="http://javafx.com" href="AES128.jnlp">
+  <information>
+    <title>AES-128</title>
+    <vendor>lee chanyoung</vendor>
+    <description>AES-128 encryption tool</description>
+    <offline-allowed/>
+  </information>
+  <resources>
+    <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
+    <jar href="AES128.jar" size="15021" download="eager" />
+  </resources>
+  <jfx:javafx-desc  width="600" height="400" main-class="aes.Main"  name="AES128" />
+  <update check="background"/>
+</jnlp>

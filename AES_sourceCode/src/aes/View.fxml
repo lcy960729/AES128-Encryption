@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="590.0" prefWidth="1709.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="aes.Controller">
+   <children>
+      <VBox layoutX="14.0" layoutY="3.0" prefHeight="594.0" prefWidth="842.0">
+         <children>
+            <HBox alignment="CENTER_LEFT" prefHeight="35.0" prefWidth="842.0">
+               <children>
+                  <Label prefHeight="30.0" prefWidth="429.0" text="AES - 128  [21511781 이찬영]">
+                     <font>
+                        <Font size="25.0" />
+                     </font>
+                  </Label>
+                  <RadioButton fx:id="encryption_rb" mnemonicParsing="false" prefWidth="90.0" selected="true" text="Encrypt">
+                     <HBox.margin>
+                        <Insets left="270.0" right="10.0" />
+                     </HBox.margin>
+                  </RadioButton>
+                  <RadioButton fx:id="decryption_rb" mnemonicParsing="false" prefWidth="90.0" text="Decrypt" />
+               </children>
+               <VBox.margin>
+                  <Insets bottom="5.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="44.0" prefWidth="842.0">
+               <children>
+                  <GridPane alignment="CENTER" prefHeight="43.0" prefWidth="267.0">
+                    <columnConstraints>
+                      <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" maxWidth="123.0" minWidth="10.0" prefWidth="119.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="79.0" minWidth="10.0" prefWidth="60.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="60.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <Label text="Key Input Type : " />
+                        <RadioButton fx:id="keyInputText_rb" mnemonicParsing="false" prefWidth="70.0" text="Text" GridPane.columnIndex="1" />
+                        <RadioButton fx:id="keyInputHex_rb" mnemonicParsing="false" prefWidth="70.0" selected="true" text="Hex" GridPane.columnIndex="2" />
+                        <Label text="Text Input Type : " GridPane.rowIndex="1" />
+                        <RadioButton fx:id="textInputText_rb" mnemonicParsing="false" prefWidth="60.0" selected="true" text="Text" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <RadioButton fx:id="textInputHex_rb" mnemonicParsing="false" prefWidth="60.0" text="Hex" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                     </children>
+                  </GridPane>
+                  <TextArea fx:id="key_textArea" prefHeight="43.0" prefWidth="421.0" promptText="Key" />
+                  <Button alignment="CENTER" mnemonicParsing="false" onAction="#run_btnClick" prefHeight="49.0" prefWidth="138.0" text="Run!">
+                     <HBox.margin>
+                        <Insets left="15.0" />
+                     </HBox.margin></Button>
+               </children>
+               <VBox.margin>
+                  <Insets bottom="10.0" />
+               </VBox.margin>
+            </HBox>
+            <GridPane prefHeight="491.0" prefWidth="842.0">
+              <columnConstraints>
+                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints maxHeight="500.0" minHeight="10.0" prefHeight="317.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <TextArea fx:id="inputText_textArea" prefHeight="200.0" prefWidth="200.0" promptText="Please Enter Input Text" wrapText="true">
+                     <GridPane.margin>
+                        <Insets right="5.0" />
+                     </GridPane.margin>
+                  </TextArea>
+                  <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1">
+                     <children>
+                        <TextArea fx:id="outputText_textArea" editable="false" prefHeight="355.0" prefWidth="421.0" promptText="Output Text" wrapText="true">
+                           <VBox.margin>
+                              <Insets bottom="5.0" left="5.0" />
+                           </VBox.margin></TextArea>
+                        <TextArea fx:id="outputHex_textArea" editable="false" prefHeight="128.0" prefWidth="416.0" promptText="Output Text Hex Value" wrapText="true">
+                           <VBox.margin>
+                              <Insets left="5.0" top="5.0" />
+                           </VBox.margin></TextArea>
+                     </children>
+                  </VBox>
+               </children>
+               <VBox.margin>
+                  <Insets bottom="10.0" />
+               </VBox.margin>
+            </GridPane>
+         </children>
+      </VBox>
+      <TableView fx:id="roundKey_tableView" layoutX="866.0" layoutY="9.0" prefHeight="579.0" prefWidth="842.0">
+        <columns>
+          <TableColumn fx:id="round_col" prefWidth="70.0" text="Round" />
+          <TableColumn fx:id="state_col" prefWidth="430.0" text="State" />
+            <TableColumn fx:id="roundKey_col" prefWidth="341.0" text="Round Key" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>
