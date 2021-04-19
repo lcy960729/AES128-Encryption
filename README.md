@@ -1,5 +1,6 @@
 # AES128-Encryption
 AES128 암호화, 복호화 프로그램
+암호화 라이브러리를 사용하지 않고 직접 구현
 
 ## 1. 플로우 차트
 ![플로우 차트](https://user-images.githubusercontent.com/58020519/106413712-255e4200-648e-11eb-82ea-376bd762e846.png)
